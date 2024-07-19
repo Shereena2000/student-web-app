@@ -22,7 +22,7 @@ class StudentDataAdapter extends TypeAdapter<StudentData> {
       place: fields[2] as String,
       admisstionNo: fields[3] as String,
       id: fields[4] as int?,
-      imagePath: fields[5] as String?,
+      imagePath: fields[5] as Uint8List?,
     );
   }
 

@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:student_record/components/add_detailes.dart';
 import 'package:student_record/components/view_details.dart';
@@ -20,25 +19,26 @@ class StudentGridTile extends StatelessWidget {
         decoration: BoxDecoration(
             color: tealColor, borderRadius: BorderRadius.circular(8)),
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.only(right: 10.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ClipOval(
                 child: student.imagePath != null
-                    ? Image.file(
-                        File(student.imagePath!),
-                        width: 60,
-                        height: 60,
+                    ? Image.memory(
+                        student.imagePath!,
+                        width: 70,
+                        height: 70,
                         fit: BoxFit.cover,
                       )
                     : Image.asset(
                         'assets/images/avathara.jpeg',
-                        width: 60,
-                        height: 60,
+                        width: 70,
+                        height: 70,
                         fit: BoxFit.cover,
                       ),
               ),
-              sizedboxh10,
               Text(
                 student.name,
                 style: normalText,
@@ -62,9 +62,7 @@ class StudentGridTile extends StatelessWidget {
                       onPressed: () {
                         if (student.id != null) {
                           AddStudentData.deletData(student.id!);
-                        } else {
-                          print('Id is null,cannot delete');
-                        }
+                        } 
                       },
                       icon: const Icon(
                         Icons.delete,

@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:student_record/components/add_detailes.dart';
 import 'package:student_record/components/view_details.dart';
@@ -26,7 +25,7 @@ class StudentTile extends StatelessWidget {
             },
             leading: CircleAvatar(
               backgroundImage: student.imagePath != null
-                  ? FileImage(File(student.imagePath!))
+                  ? MemoryImage(student.imagePath!)
                   : const AssetImage("assets/images/avathara.jpeg")
                       as ImageProvider,
             ),

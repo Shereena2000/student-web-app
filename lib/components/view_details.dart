@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:student_record/constants/const.dart';
 import 'package:student_record/db/model/data.dart';
@@ -30,10 +29,10 @@ void viewDialoge(context, StudentData student) {
                     children: [
                       ClipOval(
                         child: student.imagePath != null
-                            ? Image.file(
-                                File(student.imagePath!),
+                            ? Image.memory(
+                                student.imagePath!,
                                 width: 100,
-                                height:100,
+                                height: 100,
                                 fit: BoxFit.cover,
                               )
                             : Image.asset(
@@ -64,4 +63,3 @@ void viewDialoge(context, StudentData student) {
         );
       });
 }
-

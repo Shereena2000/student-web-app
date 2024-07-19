@@ -120,9 +120,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         })
                     : GridView.builder(
                         gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          mainAxisSpacing: 8.0,
-                          crossAxisSpacing: 8.0,
+                          crossAxisCount: 4,
+                          mainAxisSpacing: 10.0,
+                           crossAxisSpacing: 10.0,
                         ),
                         itemCount: filteredStudent.length,
                         itemBuilder: (BuildContext context, int index) {

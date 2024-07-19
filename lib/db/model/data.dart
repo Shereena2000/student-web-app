@@ -1,3 +1,4 @@
+import 'dart:typed_data';
 import 'package:hive_flutter/adapters.dart';
 part 'data.g.dart';
 
@@ -14,7 +15,7 @@ class StudentData {
   @HiveField(4)
   int? id;
   @HiveField(5)
-  String? imagePath;
+  Uint8List? imagePath;
   StudentData(
       {required this.name,
       required this.age,
